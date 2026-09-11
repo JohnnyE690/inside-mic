@@ -284,16 +284,14 @@
   .stats b { display: block; font-family: var(--font-display); font-size: 1.45rem; color: var(--accent-2); line-height: 1; }
   .stats span { display: block; font-family: var(--font-mono); font-size: 0.55rem; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; line-height: 1.3; }
 
-  @media (max-width: 600px) {
-    .col .body, .notes__body, .feature-text .body { column-count: 1; }
-    .sa__grid { grid-template-columns: 1fr; }
-    .issuemap { grid-template-columns: repeat(5, 1fr); }
-    /* The fixed 8.5:11 "page" box is a desktop print-page conceit. At phone width, the same
-       text needs far more vertical room than that locked ratio allows, so instead of clipping
-       (overflow:hidden) content was spilling into the next page's space. On mobile, pages that
-       are mostly text get their real, natural height back; the two full-bleed photo pages
-       (cover, feature-photo) keep a fixed ratio since their content is short and designed to
-       overlay a photo either way. */
+  /* The fixed 8.5:11 "page" box is a desktop print-page conceit calibrated for the .rack's own
+     900px design width. Anywhere narrower than that, the same text needs more vertical room
+     than the locked ratio allows, so instead of clipping (overflow:hidden) content was spilling
+     into the next page's space — on phones badly, but measurably even at tablet widths. This
+     safety net applies below the design width itself, not just at phone sizes, so nothing in
+     between is left broken. The two full-bleed photo pages (cover, feature-photo) keep a fixed
+     ratio, since their content is short and designed to overlay a photo either way. */
+  @media (max-width: 900px) {
     .page:not(.cover):not(.feature-photo) {
       aspect-ratio: auto; height: auto; min-height: 0; overflow: visible; padding-bottom: 0.4rem;
     }
@@ -304,6 +302,12 @@
     .page.cover, .page.feature-photo { aspect-ratio: 3 / 4; }
     .ad__cta { margin-top: 1.4rem; }
     .verify { flex: none; }
+  }
+  /* Below this, two text columns get too narrow to read comfortably even with height fixed. */
+  @media (max-width: 560px) {
+    .col .body, .notes__body, .feature-text .body { column-count: 1; }
+    .sa__grid { grid-template-columns: 1fr; }
+    .issuemap { grid-template-columns: repeat(5, 1fr); }
   }
 </style>
 </head>
