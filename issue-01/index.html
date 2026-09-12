@@ -302,6 +302,20 @@
   .robotfashion__card figcaption b { color: var(--ink); font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; display: block; margin-bottom: 0.15rem; }
   .robotfashion__card figcaption a { color: var(--accent-2); }
 
+  /* Page-specific breathing-room fixes, 2026-09-12 — several pages left a large dead gap
+     at the bottom of the fixed page box. Scoped to one page each so no other page's layout
+     shifts (a page already tight on space, like p03, must not be pushed into overflow). */
+  #p02 .toc__row { padding-top: 0.62rem; padding-bottom: 0.62rem; }
+  #p02 .toc__note { padding: 1rem 1.1rem; font-size: 0.76rem; }
+  #p07 .fig { margin: 1.3rem 0 1.4rem; }
+  #p07 .sa__grid { gap: 1rem; margin-bottom: 1.3rem; }
+  #p07 .sa__stats { margin-bottom: 1.3rem; }
+  #p07 .sa__stat { padding: 0.7rem 0.6rem; }
+  #p13 .body { line-height: 1.74; }
+  #p14 .verify__head { margin-bottom: 1.5rem; }
+  #p14 ul { line-height: 1.7; margin-bottom: 1.2rem; }
+  #p14 table td, #p14 table th { padding: 0.55rem 0.6rem; }
+
   /* The fixed 8.5:11 "page" box is a desktop print-page conceit calibrated for the .rack's own
      900px design width. Anywhere narrower than that, the same text needs more vertical room
      than the locked ratio allows, so instead of clipping (overflow:hidden) content was spilling
