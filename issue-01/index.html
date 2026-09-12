@@ -287,6 +287,20 @@
   .stats b { display: block; font-family: var(--font-display); font-size: 1.45rem; color: var(--accent-2); line-height: 1; }
   .stats span { display: block; font-family: var(--font-mono); font-size: 0.55rem; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; line-height: 1.3; }
 
+  /* Robot Fashion — recurring half-page strip, home page 3. Line-art plates only,
+     never a real photo of a copyrighted runway shot: every look here is real,
+     dated and sourced, drawn in the house style like every other plate in this issue. */
+  .robotfashion { column-span: all; margin-top: 0.7rem; padding-top: 0.7rem; border-top: 3px solid var(--ink); }
+  .robotfashion__head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .robotfashion__sub { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .robotfashion__intro { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin: 0 0 0.7rem; }
+  .robotfashion__strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
+  .robotfashion__card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0.6rem; margin: 0; }
+  .robotfashion__card svg { width: 100%; height: auto; display: block; background: var(--surface-2); border-radius: 6px; }
+  .robotfashion__card figcaption { font-size: 0.66rem; line-height: 1.45; color: var(--muted); margin-top: 0.45rem; }
+  .robotfashion__card figcaption b { color: var(--ink); font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; display: block; margin-bottom: 0.15rem; }
+  .robotfashion__card figcaption a { color: var(--accent-2); }
+
   /* The fixed 8.5:11 "page" box is a desktop print-page conceit calibrated for the .rack's own
      900px design width. Anywhere narrower than that, the same text needs more vertical room
      than the locked ratio allows, so instead of clipping (overflow:hidden) content was spilling
@@ -311,6 +325,7 @@
     .col .body, .notes__body, .feature-text .body { column-count: 1; }
     .sa__grid { grid-template-columns: 1fr; }
     .issuemap { grid-template-columns: repeat(5, 1fr); }
+    .robotfashion__strip { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -402,25 +417,55 @@
     <div class="body" style="margin-top:1rem">
       <p class="dropcap">This issue features one page outlining the South African automotive floor &mdash; not twenty. I made that correction deliberately. INSIDE MIC concerns itself with the craft of metal forming, and automotive is one customer sector among the many a stamping shop serves. A magazine that speaks only of a single industry ceases to be useful to everyone outside it, and I have sat in enough toolrooms serving appliance, mining, agricultural and packaging work to know how quickly they stop reading.</p>
       <div class="pull">A press shop's world is larger than whichever industry happens to be loudest this week.</div>
-      <p>What earns a full page here is straightforward: material that is sourced, dated, and specific enough for a tooling shop to act upon. On the automotive side, this issue clears that bar once &mdash; a stamping facility changing ownership, and what such a change does to every tooling contract in the building. I have watched that happen from inside a supplier. The principle travels; the plant's name does not.</p>
-      <p>The remainder is the shop floor proper. What a die setter watches for that no checklist fully captures; two instalments of Die Science; and &mdash; new this issue &mdash; a three-part series on remote work through a manufacturing lens, built on the actual trials rather than the opinion pieces, because I wanted to know what the evidence said before I formed a view. A two-page feature on decentralised command closes the editorial run, and I will declare an interest: it describes a way of running a business I have practised, been misread for, and come to trust.</p>
-      <p>A word on the drawings. Every editorial page carries a figure drawn for it, because a principle in metal forming is rarely understood from prose alone. A cutting edge that meets the sheet a fraction out of square, a slug that would rather ride the punch than fall, a blank whose area must survive three draws unchanged &mdash; these are geometric facts, and geometry wants a picture. Where a photograph shows the surface, a section shows the cause. I intend to keep both.</p>
-      <p>Twenty pages is the target, built up issue by issue rather than padded out in a single sitting. Fourteen editorial pages this time, three advertisements, and the furniture that holds them together. What I would welcome most from readers is the material no research panel can supply: the fault you traced to its root last month, and the fix that held.</p>
-      <figure class="fig fig--span">
-        <div class="issuemap__title">THE ISSUE, ONE TILE PER PAGE &mdash; COLOUR SHOWS WHAT'S ON IT</div>
-        <div class="issuemap">
-          <span class="furn">01</span><span class="furn">02</span><span class="furn">03</span><span class="craft">04</span><span class="craft">05</span><span class="craft">06</span><span class="sa-pg">07</span><span class="craft">08</span><span class="craft">09</span><span class="craft">10</span>
-          <span class="people">11</span><span class="people">12</span><span class="people">13</span><span class="furn">14</span><span class="people">15</span><span class="people">16</span><span class="ad-pg">17</span><span class="ad-pg">18</span><span class="ad-pg">19</span><span class="furn">20</span>
+      <p>What earns a full page here is sourced, dated, and specific enough for a tooling shop to act on &mdash; this issue clears that bar once, on a stamping facility changing hands, and what a change of ownership does to every tooling contract in the building. The remainder is the shop floor proper: what a die setter watches for that no checklist captures, two instalments of Die Science, a new three-part series on remote work built on the actual trials rather than opinion, and a two-page feature on decentralised command I'll declare an interest in &mdash; it describes a way of running a business I have practised, been misread for, and come to trust.</p>
+      <p>Twenty pages is the target, built up issue by issue rather than padded out in a single sitting. What I'd welcome most from readers is the material no research panel can supply: the fault you traced to its root last month, and the fix that held.</p>
+      <div class="robotfashion">
+        <div class="robotfashion__head">
+          <span class="dept-tab">Recurring<b>Robot Fashion</b></span>
+          <span class="robotfashion__sub">New department &middot; real runways, dated and checked</span>
         </div>
-        <div class="issuemap__key"><span><i style="background:var(--accent-2)"></i>Craft &amp; Die Science &middot; 7 pages</span><span><i style="background:var(--accent)"></i>People &amp; Plants &middot; 5 pages</span><span><i style="background:var(--safety)"></i>The SA Floor &middot; 1 page</span><span><i style="background:var(--midnight)"></i>Advertising &middot; 3 pages</span><span><i style="background:var(--surface-2);border:1px solid var(--line-strong)"></i>Cover, contents, column, verification, back</span></div>
-        <figcaption><b>The issue as a map.</b> Where the twenty pages go &mdash; one page of automotive, thirteen of craft and people.</figcaption>
-      </figure>
-      <div class="stats">
-        <div><b>20</b><span>pages this issue</span></div>
-        <div><b>14</b><span>editorial pages</span></div>
-        <div><b>3</b><span>controlled trials cited, People &amp; Plants</span></div>
-        <div><b>5</b><span>specialist briefs behind the CEO feature</span></div>
-        <div><b>1</b><span>page of automotive &mdash; by design</span></div>
+        <p class="robotfashion__intro">A press shop already knows this better than any fashion editor: a machine's shape follows its job, not a trend &mdash; a press looks nothing like a laser cutter, and neither looks like a robot dog. The runway found the same thing out this year, on purpose or not.</p>
+        <div class="robotfashion__strip">
+          <figure class="robotfashion__card">
+            <svg class="fig" viewBox="0 0 200 170">
+              <rect x="60" y="18" width="30" height="26" rx="13" class="f-2"/>
+              <circle cx="75" cy="14" r="3" class="f-amb"/>
+              <path d="M60 44 L45 60 L45 100 L60 130" class="ln"/>
+              <path d="M90 44 L105 60 L105 100 L90 130" class="ln"/>
+              <path d="M60 44 L60 100 L90 100 L90 44 Z" class="f-paper"/>
+              <path d="M60 48 L75 68 L90 48" class="ln-amb"/>
+              <circle cx="75" cy="52" r="2" class="f-mid"/><circle cx="75" cy="60" r="2" class="f-mid"/>
+              <path d="M64 46 Q75 56 86 46" class="ln-thin"/>
+              <circle cx="66" cy="49" r="1.6" class="f-2"/><circle cx="71" cy="52" r="1.6" class="f-2"/><circle cx="79" cy="52" r="1.6" class="f-2"/><circle cx="84" cy="49" r="1.6" class="f-2"/>
+              <path d="M60 130 L55 155" class="ln"/><path d="M90 130 L95 155" class="ln"/>
+              <rect x="47" y="153" width="16" height="8" rx="2" class="f-2"/><rect x="87" y="153" width="16" height="8" rx="2" class="f-2"/>
+            </svg>
+            <figcaption><b>Paris, 8 Oct 2025.</b> Noetix Robotics' N2 &mdash; 1.14m tall &mdash; walked three vintage looks at a UNESCO venue after Fashion Week's official close, a waistcoat and pearls among them. <a href="https://time.com/7324638/paris-fashion-week-humanoid-robot-model-noetix-n2/" target="_blank" rel="noopener">TIME</a></figcaption>
+          </figure>
+          <figure class="robotfashion__card">
+            <svg class="fig" viewBox="0 0 200 170">
+              <rect x="60" y="70" width="80" height="30" rx="10" class="f-2"/>
+              <circle cx="150" cy="80" r="14" class="f-2"/><circle cx="155" cy="75" r="2" class="f-amb"/>
+              <path d="M60 100 L55 140" class="ln"/><path d="M80 100 L78 140" class="ln"/><path d="M120 100 L122 140" class="ln"/><path d="M140 100 L145 140" class="ln"/>
+              <rect x="48" y="138" width="14" height="7" rx="2" class="f-2"/><rect x="71" y="138" width="14" height="7" rx="2" class="f-2"/><rect x="115" y="138" width="14" height="7" rx="2" class="f-2"/><rect x="138" y="138" width="14" height="7" rx="2" class="f-2"/>
+              <path d="M62 70 Q68 60 75 70 Q81 60 88 70 Q94 60 101 70 Q107 60 114 70 Q120 60 127 70" class="ln-amb"/>
+              <path d="M136 78 Q142 70 148 78" class="ln-amb"/>
+              <path d="M55 55 L60 70" class="ln-thin"/>
+            </svg>
+            <figcaption><b>Shanghai, 27 Mar 2025.</b> A Unitree quadruped stole its own slot in frilly lace to match its humanoid co-star, flipping mid-runway to show the outfit off. <a href="https://news.cgtn.com/news/2025-03-27/Robots-on-the-runway-Humanoid-stuns-Shanghai-Fashion-Week-1C5qQ7ZO2HK/p.html" target="_blank" rel="noopener">CGTN</a></figcaption>
+          </figure>
+          <figure class="robotfashion__card">
+            <svg class="fig" viewBox="0 0 200 170">
+              <path d="M75 20 L100 5 L125 20 L112 30 L88 30 Z" class="f-amb"/>
+              <circle cx="100" cy="42" r="15" class="f-2"/><circle cx="106" cy="37" r="2" class="f-mid"/>
+              <path d="M55 60 L75 50 L100 58 L125 50 L145 60 L130 100 L100 92 L70 100 Z" class="f-acc"/>
+              <path d="M70 100 L60 140" class="ln"/><path d="M130 100 L140 140" class="ln"/>
+              <rect x="48" y="138" width="16" height="8" rx="2" class="f-2"/><rect x="136" y="138" width="16" height="8" rx="2" class="f-2"/>
+              <path d="M55 60 L30 75 M145 60 L170 75" class="ln-amb dash"/>
+            </svg>
+            <figcaption><b>Beijing, Aug 2025.</b> &ldquo;Celestial Couture&rdquo; put twelve robots in custom costumes for the World Humanoid Robot Games' opening &mdash; not every turn stuck the landing. <a href="https://thoughtcatalog.com/chris-lavergne/2026/05/fashion-brands-are-about-to-discover-their-next-growth-market-dressing-humanoid-robots/" target="_blank" rel="noopener">Thought Catalog</a></figcaption>
+          </figure>
+        </div>
       </div>
     </div>
     <span class="page__num">03</span><span class="page__foot">INSIDE MIC &middot; Aug 2026</span>
