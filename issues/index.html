@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INSIDE MIC — Manufacturing Intelligence</title>
+<meta name="description" content="INSIDE MIC — a trade magazine for metal stamping and die tooling. Every issue, archived. A CORMANIX product.">
+<meta property="og:title" content="INSIDE MIC — Manufacturing Intelligence">
+<meta property="og:description" content="A trade magazine for metal stamping and die tooling — craft features, die-science explainers, and verified reporting from the shop floor.">
+<meta property="og:type" content="website">
+<meta name="google-site-verification" content="G5aoL6VaeH_JtXD733wVD8PbOqt2iiaynB0gbE7cMEQ" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600;0,700;0,800;1,600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #222B2B; --paper: #F5F3EC; --surface: #FFFFFF; --surface-2: #EAE6D8;
+    --muted: #627D86; --line: #DCD5C4; --line-strong: #B9AFA0;
+    --accent: #2B9A6D; --accent-ink: #FFFFFF; --accent-2: #226A88;
+    --midnight: #16324A; --midnight-ink: #FFFFFF; --safety: #D7A33D;
+    --font-display: 'Archivo', system-ui, sans-serif;
+    --font-body: 'Public Sans', -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .top { background: var(--midnight); color: var(--midnight-ink); padding: 0.9rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .top__badge { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.75); }
+  .hero { max-width: 760px; margin: 0 auto; padding: 3.5rem 1.5rem 2rem; text-align: center; }
+  .hero h1 { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: clamp(2.6rem, 9vw, 4.2rem); line-height: 0.95; margin: 0 0 0.6rem; letter-spacing: -0.01em; }
+  .hero p.desc { font-size: 1.05rem; color: var(--muted); max-width: 42rem; margin: 0 auto; }
+  .hero .working { font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); margin-top: 1rem; }
+  .issues { max-width: 900px; margin: 1.5rem auto 4rem; padding: 0 1.5rem; }
+  .issues__head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px solid var(--ink); padding-bottom: 0.5rem; margin-bottom: 1.2rem; }
+  .issues__head h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: 1.3rem; margin: 0; }
+  .issues__head span { font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); }
+  .issue-card { display: flex; gap: 1.4rem; align-items: center; background: var(--surface); border: 2px solid var(--accent-2); border-radius: 16px; padding: 1.2rem 1.4rem; margin-bottom: 1rem; text-decoration: none; cursor: pointer; box-shadow: 0 1px 2px rgba(34,43,43,0.05), 0 8px 20px -14px rgba(34,43,43,0.3); transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s; }
+  .issue-card:hover, .issue-card:focus-visible { border-color: var(--accent); box-shadow: 0 2px 4px rgba(34,43,43,0.08), 0 14px 28px -14px rgba(34,43,43,0.4); transform: translateY(-2px); }
+  .issue-card__num { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--accent-ink); background: var(--accent-2); border-radius: 10px; flex-shrink: 0; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; }
+  .issue-card__body h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: 1.1rem; margin: 0 0 0.2rem; }
+  .issue-card__body p { margin: 0; font-size: 0.85rem; color: var(--muted); }
+  .issue-card__cta { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; padding-left: 1rem; flex-shrink: 0; }
+  .issue-card__read { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent-ink); background: var(--accent); border-radius: 999px; padding: 0.3rem 0.75rem; white-space: nowrap; }
+  .issue-card__date { font-family: var(--font-mono); font-size: 0.66rem; color: var(--muted); white-space: nowrap; }
+  .issue-card.placeholder { display: flex; gap: 1.4rem; align-items: center; background: transparent; border: 1px dashed var(--line-strong); border-radius: 16px; padding: 1.2rem 1.4rem; margin-bottom: 1rem; opacity: 0.55; cursor: default; box-shadow: none; }
+  .issue-card.placeholder .issue-card__num { background: var(--surface-2); color: var(--muted); box-shadow: none; }
+  footer { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 3rem; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); line-height: 1.7; }
+  @media (max-width: 600px) { .issue-card, .issue-card.placeholder { flex-wrap: wrap; } .issue-card__cta { margin-left: 0; align-items: flex-start; padding-left: 0; width: 100%; flex-direction: row; justify-content: space-between; } }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <span class="top__badge">A CORMANIX product under licence</span>
+  <span class="top__badge">Manufacturing Intelligence</span>
+</div>
+
+<div class="hero">
+  <h1>Inside<br>Mic</h1>
+  <p class="desc">A trade magazine for metal stamping and die tooling — craft features, die-science explainers, and verified reporting from the shop floor.</p>
+  <p class="working">Working title, not yet trademark-cleared &middot; CIPC search pending</p>
+</div>
+
+<div class="issues">
+  <div class="issues__head"><h2>Issues</h2><span>1 published</span></div>
+
+  <a class="issue-card" href="../issue-01/">
+    <span class="issue-card__num">01</span>
+    <span class="issue-card__body">
+      <h3>When a Plant Changes Hands</h3>
+      <p>What a die setter actually watches for &middot; The SA Floor &middot; Die Science &middot; Remote Work &middot; Decentralised Command</p>
+    </span>
+    <span class="issue-card__cta">
+      <span class="issue-card__read">Read the issue &rarr;</span>
+      <span class="issue-card__date">Aug 2026</span>
+    </span>
+  </a>
+
+  <div class="issue-card placeholder">
+    <span class="issue-card__num">02</span>
+    <span class="issue-card__body">
+      <h3>Coming next</h3>
+      <p>Die Science: Carrier Strips &middot; Sensors for Stamping &middot; Staff Retention &amp; Motivation series</p>
+    </span>
+    <span class="issue-card__cta">
+      <span class="issue-card__date">Planned</span>
+    </span>
+  </div>
+</div>
+
+<footer>
+  Published by CORMANIX (Pty) Ltd &mdash; a CORMANIX product under licence. Working title, pending CIPC trademark search (Classes 16, 41, 9, 35).<br>
+  Written from real trade knowledge and real capture projects &mdash; reference material read, understood, and rederived in original words. Not reproduced.<br>
+  Corrections: to the sender.
+</footer>
+
+</body>
+</html>
